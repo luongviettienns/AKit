@@ -61,4 +61,5 @@ Follow `microsoft/playwright-cli` locator priority (`references/qa-matrix.md`):
 
 ## Reference Materials & Attribution
 - Viewport QA matrix, Playwright resilient locator patterns, and horizontal-overflow check snippet: `references/qa-matrix.md`
+- Anthropic `webapp-testing` lifecycle playbook (`with_server.py`, `networkidle` reconnaissance-then-action, console/pageerror listeners): `references/anthropic-webapp-testing-playbook.md`
 - Inspired by `microsoft/playwright-cli` and `anthropics/skills` (`webapp-testing`). Original AKit instructions.

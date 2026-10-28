@@ -71,4 +71,5 @@ Inspect every line of the candidate `SKILL.md` and any bundled `scripts/*`:
 
 ## Reference Materials & Attribution
 - External skill trust & security audit scorecard: `references/skill-trust-audit.md`
-- Inspired by `sickn33/agentic-awesome-skills`, `rmyndharis/antigravity-skills`, and `github/awesome-copilot`. Original AKit instructions.
+- `vercel-labs/skills` (`find-skills` CLI `npx skills find/add/list/update`) & the 5 Awesome Skill Catalogs (`ComposioHQ/awesome-claude-skills`, `travisvn/awesome-claude-skills`, `BehiSecc/awesome-claude-skills`, `kaichen/agent-skillset`, `helloianneo/awesome-claude-code-skills`): `references/find-skills-and-awesome-catalogs.md`
+- Inspired by `vercel-labs/skills` (`find-skills`), `ComposioHQ/awesome-claude-skills`, `travisvn/awesome-claude-skills`, `BehiSecc/awesome-claude-skills`, `kaichen/agent-skillset`, `helloianneo/awesome-claude-code-skills`, `sickn33/agentic-awesome-skills`, `rmyndharis/antigravity-skills`, and `github/awesome-copilot`. Original AKit instructions.

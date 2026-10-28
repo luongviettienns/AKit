@@ -54,6 +54,17 @@ Every screen and interactive component MUST specify 6 states before implementati
 5. **Network / Partial Failure:** Retryable banner or fallback without crashing the whole page.
 6. **Keyboard Focus & Disabled:** Visible `:focus-visible` ring (`2px` offset) and accessible touch targets (`>= 44x44px` on mobile).
 
+### Step 4: Enforce Anti-Slop, High-Craft Motion, GSAP & WebGL/3D Rules
+1. **Run Impeccable (24 Commands & 61 Rules) + Hallmark (57 Criteria) + Taste Audit:**
+   - Consult `references/impeccable-hallmark-taste-anti-slop.md` to eliminate AI visual clichés (nested card-in-card syndrome, generic `Hero -> 3-Col` templates, purple-to-cyan gradients, filler copy) and align `DESIGN.md` with `google-labs-code/design.md` (YAML tokens + prose) and `VoltAgent/awesome-design-md`.
+2. **Apply High-Craft Motion, GSAP, 3D Scroll & WebGL Over DOM (`references/motion-gsap-webgl-scroll-world.md`):**
+   - **Emil Kowalski's Laws (`emilkowalski/skills`):** Never animate entering UI from `scale(0)` (start from `scale(0.93)`–`scale(0.97)`), never use `ease-in` on enter (use `ease-out` / damped springs `< 250ms`), and prefer interruptible CSS transitions.
+   - **GSAP (`greensock/gsap-skills`):** Always use `useGSAP()` with `{ scope: containerRef }` and `contextSafe()` event callbacks — never bare `useEffect`.
+   - **Interactive WebGL (`DavidHDev/canvas-ui`) & Animated Primitives (`DavidHDev/react-bits`):** Keep underlying HTML DOM text selectable and links clickable (`pointer-events: none` on canvas overlay).
+   - **3D Scroll Worlds (`oso95/scroll-world`):** Enforce `Scroll Position = Timestamp` and **The Seam Rule** (frame-identical transitions between Stills, Dives, and Connectors).
+3. **Audit Against Vercel's 100+ Web Interface Guidelines:**
+   - Run the 10-domain checklist in `references/vercel-100-web-interface-guidelines.md` (`focus-visible`, `prefers-reduced-motion`, `tabular-nums`, `inputmode`, `aria-label`, `shadcn/ui` composition).
+
 ---
 
 ## Red Flags & Rationalization Counter-Table
@@ -63,7 +74,8 @@ Every screen and interactive component MUST specify 6 states before implementati
 | *"I'll hardcode hex colors (`#6366f1`) directly inside 15 component files."* | Hardcoded hex values cause visual drift and break dark/light theming. Define semantic tokens in `DESIGN.md` and CSS variables first. |
 | *"The happy-path screenshot looks great, so the UI is done."* | A page without empty states, loading skeletons, error handling, and mobile responsiveness fails in real usage. Complete the 6-state matrix. |
 | *"Light gray text (`#9ca3af` on `#f3f4f6`) looks sleek and minimal."* | Fails WCAG AA contrast (< 4.5:1) and is unreadable on non-Retina screens. Verify contrast ratios (`references/ui-ux-intelligence.md`). |
-| *"I'll use `Inter` + purple gradients for every single project."* | Generic AI template fatigue. Choose an intentional industry-aligned palette and typography pairing from `references/ui-ux-intelligence.md`. |
+| *"I'll animate the modal from `scale(0)` with `transition: all 0.5s ease-in`."* | Violates `emilkowalski/skills` and `vercel-labs/agent-skills`. Start from `scale(0.95)`, use `ease-out` (`< 220ms`), and list explicit CSS properties. |
+| *"I'll use `Inter` + purple gradients for every single project."* | Generic AI template fatigue. Choose an intentional industry-aligned palette and macrostructure from `references/impeccable-hallmark-taste-anti-slop.md`. |
 
 ---
 
@@ -74,4 +86,7 @@ Every screen and interactive component MUST specify 6 states before implementati
 ## Reference Materials & Attribution
 - Complete `DESIGN.md` specification template: `references/DESIGN.template.md`
 - UI/UX Pro Max intelligence matrix (palettes, typography, UX state checklist): `references/ui-ux-intelligence.md`
-- Inspired by `VoltAgent/awesome-design-md`, `nextlevelbuilder/ui-ux-pro-max-skill`, and `anthropics/skills` (`frontend-design`). Original AKit instructions.
+- Vercel 100+ Web Interface Guidelines & Anthropic `web-artifacts-builder` (`shadcn/ui` + Tailwind): `references/vercel-100-web-interface-guidelines.md`
+- Impeccable (24 commands, 61 rules), Hallmark (57 criteria), Taste Skill, Google `DESIGN.md`, Open Design: `references/impeccable-hallmark-taste-anti-slop.md`
+- Emil Kowalski Motion Laws, GSAP (`useGSAP`, `ScrollTrigger`), React Bits (200+ components), Scroll World (`The Seam Rule`), Canvas UI (WebGL over DOM): `references/motion-gsap-webgl-scroll-world.md`
+- Inspired by `nextlevelbuilder/ui-ux-pro-max-skill`, `VoltAgent/awesome-design-md`, `google-labs-code/design.md`, `nexu-io/open-design`, `Leonxlnx/taste-skill`, `pbakaus/impeccable`, `nutlope/hallmark`, `emilkowalski/skills`, `DavidHDev/react-bits`, `greensock/gsap-skills`, `oso95/scroll-world`, `DavidHDev/canvas-ui`, `vercel-labs/agent-skills`, and `anthropics/skills`. Original AKit instructions.

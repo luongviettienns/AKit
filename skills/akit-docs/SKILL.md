@@ -59,4 +59,5 @@ description: Use when working with version-sensitive libraries, framework migrat
 
 ## Reference Materials & Attribution
 - High-risk framework version-drift table & grounding checklist: `references/version-grounding-checklist.md`
-- Inspired by `upstash/context7` (version-aware library documentation) and `dair-ai/Prompt-Engineering-Guide` (grounded retrieval). Original AKit instructions.
+- Anthropic `doc-coauthoring` 3-stage workflow (Context Gathering, Refinement, and fresh-subagent `Reader Testing`) + Office document handoff rules (`docx`, `pdf`, `pptx`, `xlsx`): `references/anthropic-doc-coauthoring-workflow.md`
+- Inspired by `upstash/context7` (version-aware library documentation), `anthropics/skills` (`doc-coauthoring`, `docx`, `pdf`, `pptx`, `xlsx`), and `dair-ai/Prompt-Engineering-Guide` (grounded retrieval). Original AKit instructions.

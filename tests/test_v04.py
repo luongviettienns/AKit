@@ -366,6 +366,119 @@ diff --git a/src/unrelated_billing.py b/src/unrelated_billing.py
         sources_md = (ROOT / "docs" / "SOURCES.md").read_text(encoding="utf-8")
         self.assertIn("multica-ai/andrej-karpathy-skills", sources_md)
 
+    def test_vercel_anthropic_and_awesome_skills_deep_integration(self):
+        # 1. vercel-labs/agent-skills: vercel-react-best-practices (8 priority categories, 45+ / 70 rules)
+        react_md = (ROOT / "skills" / "akit-react" / "SKILL.md").read_text(encoding="utf-8")
+        self.assertIn("references/vercel-8-tier-rules-catalog.md", react_md)
+        react_ref = (ROOT / "skills" / "akit-react" / "references" / "vercel-8-tier-rules-catalog.md").read_text(encoding="utf-8")
+        for prefix in ("async-", "bundle-", "server-", "client-", "rerender-", "rendering-", "js-", "advanced-"):
+            self.assertIn(prefix, react_ref, f"Missing Vercel React rule category prefix {prefix}")
+        for rule_id in ("async-parallel", "bundle-barrel-imports", "server-cache-react", "rerender-derived-state-no-effect"):
+            self.assertIn(rule_id, react_ref, f"Missing Vercel React rule {rule_id}")
+
+        # 2. vercel-labs/agent-skills: web-design-guidelines (100+ UI audit rules) & anthropics/skills web-artifacts-builder
+        design_md = (ROOT / "skills" / "akit-design" / "SKILL.md").read_text(encoding="utf-8")
+        self.assertIn("references/vercel-100-web-interface-guidelines.md", design_md)
+        design_ref = (ROOT / "skills" / "akit-design" / "references" / "vercel-100-web-interface-guidelines.md").read_text(encoding="utf-8")
+        for token in ("focus-visible", "prefers-reduced-motion", "tabular-nums", "inputmode", "aria-label", "shadcn/ui"):
+            self.assertIn(token, design_ref, f"Missing Web Interface Guidelines token {token}")
+
+        # 3. vercel-labs/skills (find-skills) & Awesome Skill Catalogs in akit-scout
+        scout_md = (ROOT / "skills" / "akit-scout" / "SKILL.md").read_text(encoding="utf-8")
+        self.assertIn("references/find-skills-and-awesome-catalogs.md", scout_md)
+        scout_ref = (ROOT / "skills" / "akit-scout" / "references" / "find-skills-and-awesome-catalogs.md").read_text(encoding="utf-8")
+        for item in (
+            "npx skills find",
+            "npx skills add",
+            "vercel-labs/skills",
+            "ComposioHQ/awesome-claude-skills",
+            "travisvn/awesome-claude-skills",
+            "BehiSecc/awesome-claude-skills",
+            "kaichen/agent-skillset",
+            "helloianneo/awesome-claude-code-skills",
+        ):
+            self.assertIn(item, scout_ref, f"Missing skill discovery token {item}")
+
+        # 4. anthropics/skills: webapp-testing (akit-browser-qa) & doc-coauthoring (akit-docs)
+        qa_md = (ROOT / "skills" / "akit-browser-qa" / "SKILL.md").read_text(encoding="utf-8")
+        self.assertIn("references/anthropic-webapp-testing-playbook.md", qa_md)
+        qa_ref = (ROOT / "skills" / "akit-browser-qa" / "references" / "anthropic-webapp-testing-playbook.md").read_text(encoding="utf-8")
+        self.assertIn("with_server.py", qa_ref)
+        self.assertIn("networkidle", qa_ref)
+
+        docs_md = (ROOT / "skills" / "akit-docs" / "SKILL.md").read_text(encoding="utf-8")
+        self.assertIn("references/anthropic-doc-coauthoring-workflow.md", docs_md)
+        docs_ref = (ROOT / "skills" / "akit-docs" / "references" / "anthropic-doc-coauthoring-workflow.md").read_text(encoding="utf-8")
+        self.assertIn("Reader Testing", docs_ref)
+        self.assertIn("doc-coauthoring", docs_ref)
+
+        # 5. SOURCES.md acknowledges all new repositories
+        sources_md = (ROOT / "docs" / "SOURCES.md").read_text(encoding="utf-8")
+        for repo in (
+            "vercel-labs/skills",
+            "ComposioHQ/awesome-claude-skills",
+            "travisvn/awesome-claude-skills",
+            "BehiSecc/awesome-claude-skills",
+            "kaichen/agent-skillset",
+        ):
+            self.assertIn(repo, sources_md, f"Missing {repo} in docs/SOURCES.md")
+
+    def test_frontend_design_pro_max_and_creative_motion_suite(self):
+        design_md = (ROOT / "skills" / "akit-design" / "SKILL.md").read_text(encoding="utf-8")
+        self.assertIn("references/impeccable-hallmark-taste-anti-slop.md", design_md)
+        self.assertIn("references/motion-gsap-webgl-scroll-world.md", design_md)
+
+        anti_slop_ref = (
+            ROOT / "skills" / "akit-design" / "references" / "impeccable-hallmark-taste-anti-slop.md"
+        ).read_text(encoding="utf-8")
+        for token in (
+            "pbakaus/impeccable",
+            "24",
+            "61",
+            "nutlope/hallmark",
+            "57",
+            "Leonxlnx/taste-skill",
+            "google-labs-code/design.md",
+            "VoltAgent/awesome-design-md",
+            "nexu-io/open-design",
+            "nextlevelbuilder/ui-ux-pro-max-skill",
+        ):
+            self.assertIn(token, anti_slop_ref, f"Missing Frontend Anti-Slop token {token}")
+
+        motion_ref = (
+            ROOT / "skills" / "akit-design" / "references" / "motion-gsap-webgl-scroll-world.md"
+        ).read_text(encoding="utf-8")
+        for token in (
+            "emilkowalski/skills",
+            "scale(0)",
+            "greensock/gsap-skills",
+            "useGSAP",
+            "ScrollTrigger",
+            "contextSafe",
+            "DavidHDev/react-bits",
+            "DavidHDev/canvas-ui",
+            "oso95/scroll-world",
+            "Seam Rule",
+        ):
+            self.assertIn(token, motion_ref, f"Missing Creative Motion token {token}")
+
+        sources_md = (ROOT / "docs" / "SOURCES.md").read_text(encoding="utf-8")
+        for repo in (
+            "nextlevelbuilder/ui-ux-pro-max-skill",
+            "VoltAgent/awesome-design-md",
+            "google-labs-code/design.md",
+            "nexu-io/open-design",
+            "Leonxlnx/taste-skill",
+            "pbakaus/impeccable",
+            "nutlope/hallmark",
+            "emilkowalski/skills",
+            "DavidHDev/react-bits",
+            "greensock/gsap-skills",
+            "oso95/scroll-world",
+            "DavidHDev/canvas-ui",
+        ):
+            self.assertIn(repo, sources_md, f"Missing frontend repository {repo} in docs/SOURCES.md")
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -58,4 +58,5 @@ description: Use when building or refactoring React, Next.js, or component-based
 
 ## Reference Materials & Attribution
 - Concrete React/Next.js code patterns (waterfalls, `useEffect` replacements, RSC composition, a11y): `references/react-nextjs-best-practices.md`
-- Inspired by `vercel-labs/agent-skills` (`react-best-practices`) and `nextlevelbuilder/ui-ux-pro-max-skill`. Original AKit instructions.
+- Complete 8-Priority Category & 70-Rule Vercel React/Next.js Optimization Catalog (`async-`, `bundle-`, `server-`, `client-`, `rerender-`, `rendering-`, `js-`, `advanced-`): `references/vercel-8-tier-rules-catalog.md`
+- Inspired by `vercel-labs/agent-skills` (`vercel-react-best-practices`), `DavidHDev/react-bits`, `greensock/gsap-skills`, and `nextlevelbuilder/ui-ux-pro-max-skill`. Original AKit instructions.

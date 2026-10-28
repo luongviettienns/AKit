@@ -1,0 +1,30 @@
+{
+  "$schema": "https://www.antigravity.google/schemas/mcp_config.json",
+  "_comment": "OPT-IN EXAMPLE ONLY: Copy selected servers to your Antigravity mcp_config.json only after reviewing privacy, licenses, and local prerequisites.",
+  "mcpServers": {
+    "context7": {
+      "command": "npx",
+      "args": ["-y", "@upstash/context7-mcp"],
+      "disabled": true,
+      "_purpose": "Used by akit-docs for version-pinned official library documentation (upstash/context7)."
+    },
+    "serena": {
+      "command": "uvx",
+      "args": ["--from", "git+https://github.com/oraios/serena", "serena-mcp-server"],
+      "disabled": true,
+      "_purpose": "Used by akit-codebase & akit-scout for semantic symbol navigation (oraios/serena, GPL-3.0)."
+    },
+    "playwright": {
+      "command": "npx",
+      "args": ["-y", "@playwright/mcp@latest"],
+      "disabled": true,
+      "_purpose": "Used by akit-browser-qa for real-browser E2E & accessibility verification (microsoft/playwright-cli)."
+    },
+    "postgres": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-postgres", "postgresql://localhost:5432/mydb_test"],
+      "disabled": true,
+      "_purpose": "Used by akit-postgres & akit-data for local test database schema & EXPLAIN inspection."
+    }
+  }
+}

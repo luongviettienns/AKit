@@ -1,0 +1,20 @@
+{"id":"auth_01","prompt":"Review JWT refresh token storage and authorization flaws","expected":["akit-security"]}
+{"id":"bug_02","prompt":"Our tests are intermittently failing on CI; find root cause","expected":["akit-debug"]}
+{"id":"git_03","prompt":"Split two independent tasks into isolated branches for separate agents","expected":["akit-git"]}
+{"id":"docs_04","prompt":"Verify the official library API for the version installed","expected":["akit-docs"]}
+{"id":"ui_05","prompt":"Create accessible design tokens for a responsive school dashboard","expected":["akit-design"]}
+{"id":"db_06","prompt":"Our Postgres transaction deadlocks with concurrent enrollment","expected":["akit-postgres"]}
+{"id":"p95_07","prompt":"Measure and reduce p95 request latency","expected":["akit-performance"]}
+{"id":"e2e_08","prompt":"Run critical user paths on a real browser mobile viewport","expected":["akit-browser-qa"]}
+{"id":"contract_09","prompt":"Frontend cannot agree on pagination and validation error payloads","expected":["akit-contract"]}
+{"id":"memory_10","prompt":"Hand off the current approved decisions and blockers for next session","expected":["akit-context"]}
+{"id":"short_11","prompt":"Fix a one-character typo in README without introducing unrelated work","expected":[]}
+{"id":"arena_12","prompt":"Run a 4-candidate tournament across competing architectures for a costly irreversible integration","expected":["akit-arena"]}
+{"id":"unfamiliar_13","prompt":"Add realtime seat locking for movie booking; we have never built this before","expected":["akit-prior-art","akit-architecture"]}
+{"id":"oauth_14","prompt":"Implement Google OAuth login with refresh rotation; first time doing this, look at how open-source projects do it","expected":["akit-prior-art","akit-security"]}
+{"id":"familiar_15","prompt":"Add a nullable phone field to the existing User entity, DTO and tests","expected":["akit-implement"]}
+{"id":"debate_16","prompt":"Quickly debate SSE vs WebSockets with a Devil's Advocate challenger in one round before we pick one","expected":["akit-debate"]}
+{"id":"simplify_17","prompt":"Tests are green but this service has 5 nested if-else blocks and over-engineered wrapper classes; simplify it without changing behavior","expected":["akit-simplify"]}
+{"id":"react_18","prompt":"Eliminate sequential fetch waterfalls and unnecessary useEffect state in our Next.js App Router dashboard","expected":["akit-react","akit-performance"]}
+{"id":"rls_19","prompt":"Audit our Supabase PostgreSQL Row Level Security policies for auth.uid() initPlan caching and missing indexes","expected":["akit-postgres","akit-security"]}
+{"id":"codebase_20","prompt":"Map the symbol call graph and module dependencies of this unfamiliar repository before we touch the billing flow","expected":["akit-codebase"]}

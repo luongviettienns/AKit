@@ -1,0 +1,13 @@
+{
+  "_comment": "OPT-IN EXAMPLE ONLY: Antigravity lifecycle hooks example (informed by shanraisshan/claude-code-best-practice & affaan-m/everything-claude-code). Do not enable without reviewing commands.",
+  "hooks": {
+    "PreCommitCheck": {
+      "description": "Verify no conflict markers or tracked secrets before committing (akit-git)",
+      "command": "git diff --cached --check"
+    },
+    "PostImplementationCheck": {
+      "description": "Verify AKit installation integrity and record test evidence (akit-test)",
+      "command": "python .akit/runtime/akit_cli.py doctor --project ."
+    }
+  }
+}

@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "akit-agent-toolkit"
+version = "0.4.0"
+description = "Antigravity + Codex Engineering Kit: 30 progressively loaded Agent Skills, 6 specialist subagents, Lightweight Debate & Tournament Arena, and safe installer/doctor/eval"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+
+[project.scripts]
+akit-install = "akit.install:main"
+akit-arena = "akit.arena:main"
+akit-doctor = "akit.doctor:main"
+akit-eval = "akit.eval:main"
+
+[tool.setuptools.packages.find]
+include = ["akit*"]
